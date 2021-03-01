@@ -1,0 +1,13 @@
+mixin counter(args = {})
+	- var id = Math.floor(Math.random() * 9999999999)
+	.counter&attributes(attributes)(class=args.mod_class)
+		input.counter__input.js-counter-input(
+			type='number',
+			value= args.value || '1',
+			data-min-value= args.min_value ||  '1',
+			data-suffix= args.unit,
+			data-max-value= args.max_value,
+			name= 'NAME' + id, aria-label='Счетчик')
+		button.counter__btn.counter__minus.js-counter-minus(type='button') -
+		button.counter__btn.counter__plus.js-counter-plus(type='button') +
+		.disabled-text Макс. кол-во

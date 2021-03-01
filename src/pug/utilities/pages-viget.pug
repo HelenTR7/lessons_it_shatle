@@ -1,0 +1,83 @@
+-
+	var pages = [
+		{name: 'Главная', link: 'index'},
+	]
+
++b.pages-viget
+	+e.__menu
+		+e('ul').__menu-list
+			+e('li').__menu-item
+				+e('a').__menu-link(href= '') ТЗ
+			+e('li').__menu-item
+				+e('a').__menu-link(href= '') Дизайн
+			br
+			each item in pages
+				+e('li').__menu-item
+					+e('a').__menu-link(href= './' + item.link + '.html')= item.name
+	+e.__btn
+
+script.
+	$(document).ready(function () {
+		const vigetWrap = $('.pages-viget');
+		const vigetBtn = $('.pages-viget__btn');
+
+		vigetBtn.on('click', function () {
+			vigetWrap.toggleClass('open');
+		});
+
+		$(document).on('click', function (e) {
+			if (!$(e.target).closest(vigetWrap).length) {
+				vigetWrap.removeClass('open');
+			}
+			e.stopPropagation();
+		});
+	});
+
+style(type='text/css').
+	.pages-viget {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 350px;
+		transform: translate3d(-100%, 0, 0);
+		z-index: 2000;
+		transition: all ease 0.4s;
+	}
+	.pages-viget.open {
+		transform: translate(0, 0);
+		transition: all ease 0.4s;
+	}
+	.pages-viget__menu {
+		height: 100%;
+		padding: 15px;
+		background-color: #fff;
+		border: 3px solid #84828D;
+		border-left: 0;
+	}
+	.pages-viget__menu-item {
+		margin: 0 0 4px;
+		padding: 0 0 3px;
+		border-bottom: 1px solid rgba(0,0,0,0.05);
+	}
+	.pages-viget__menu-link {
+		font-size: 13px;
+		line-height: 1.2;
+	}
+	.pages-viget__btn {
+		position: fixed;
+		top: 80px;
+		right: -43px;
+		width: 40px;
+		height: 40px;
+		background-color: #E92E27;
+		cursor: pointer;
+		border-radius: 50%;
+		background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg fill='%23fff' version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 490 490' style='enable-background:new 0 0 490 490;' xml:space='preserve'%3E%3Cg id='line_2_'%3E%3Cpath d='M436.406,76.563L367.5,0H53.594v490h382.812V76.563z M405.781,459.375H84.219V30.625h269.531v60.806h52.032V459.375z'/%3E%3Ccircle cx='153.232' cy='173.399' r='28.144'/%3E%3Crect x='221.373' y='158.102' width='143.539' height='30.625'/%3E%3Ccircle cx='153.232' cy='245.475' r='28.144'/%3E%3Crect x='221.373' y='230.162' width='143.539' height='30.625'/%3E%3Ccircle cx='153.232' cy='317.535' r='28.144'/%3E%3Crect x='221.373' y='302.223' width='143.539' height='30.625'/%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A");
+		background-position: center;
+		background-size: 20px 20px;
+		background-repeat: no-repeat;
+	}
+
+
+

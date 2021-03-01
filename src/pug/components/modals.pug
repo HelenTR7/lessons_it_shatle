@@ -1,0 +1,155 @@
+//- пример модалок
+
+//-#modal-auth
+.modal.fade.modal--auth(
+    id="modal-auth"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="modal-auth"
+    aria-hidden="true")
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header
+                .modal-status.modal-status--error
+                    +icon('i-warning')
+                    span.text Произошла ошибка. Заполните форму еще раз
+                .modal-title Авторизация
+                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    +icon('i-delete')
+            form(action="").modal-body
+                .fieldgroup.fieldgroup--modal
+                    label.label E-mail *
+                    input.input(type="email" placeholder="Введите e-mail" required)
+                .fieldgroup.fieldgroup--modal.fieldgroup--mb-sm
+                    label.label Пароль *
+                    input.input(type="text" placeholder="Введите пароль" required)
+                .fieldgroup.fieldgroup--remember
+                    label.checkbox-item
+                        input(type="checkbox" name="success" checked)
+                        span.label Запомнить меня
+                    a(
+                        href="javascript:;"
+                        data-target="#modal-forget"
+                        data-toggle="modal"
+                        data-dismiss="modal"
+                    ) Забыли пароль?
+                .fieldgroup
+                    button.btn.btn--primary.btn--full Войти
+                    a.btn.btn--bordered.btn--full(
+                        href="javascript:;"
+                        data-target="#modal-register"
+                        data-toggle="modal"
+                        data-dismiss="modal"
+                    ) Зарегистрироваться
+
+//-#modal-forget
+.modal.fade.modal--forget(
+    id="modal-forget"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="modal-forget"
+    aria-hidden="true")
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header
+                .modal-title Восстановление пароля
+                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    +icon('i-delete')
+            form(action="").modal-body
+                .modal-text Введите Ваш e-mail и на него будет выслан пароль.
+                .fieldgroup.fieldgroup--modal
+                    label.label E-mail *
+                    input.input(type="email" placeholder="Введите e-mail" required)
+                .fieldgroup
+                    button.btn.btn--primary.btn--full Восстановить пароль
+                    a.btn.btn--bordered.btn--full(
+                        href="javascript:;"
+                        data-target="#modal-auth"
+                        data-toggle="modal"
+                        data-dismiss="modal"
+                    ) Вернуться к авторизации
+
+//-#modal-register
+.modal.fade.modal--register(
+    id="modal-register"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="modal-register"
+    aria-hidden="true")
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header
+                .modal-title Регистрация
+                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    +icon('i-delete')
+            form(action="").modal-body
+                .fieldgroup.fieldgroup--modal.has-error
+                    label.label E-mail *
+                    input.input(type="email" placeholder="Введите e-mail" required)
+                    .error-mess это поле должно быть заполнено
+                .fieldgroup.fieldgroup--modal
+                    label.label Пароль *
+                    input.input(type="text" placeholder="Введите пароль" required)
+                .fieldgroup.fieldgroup--modal.has-error
+                    label.label Повторите пароль *
+                    input.input(type="text" placeholder="Повторите пароль" required)
+                    .error-mess пароли не совпадают
+                .fieldgroup
+                    button.btn.btn--primary.btn--full Зарегистрироваться
+                    .modal-text Нажимая на кнопку «Зарегистрироваться», я даю согласие на обработку персональных данных
+                    a.btn.btn--bordered.btn--full(
+                        href="javascript:;"
+                        data-target="#modal-auth"
+                        data-toggle="modal"
+                        data-dismiss="modal"
+                    ) Вернуться к авторизации
+
+//-#modal-feedback
+.modal.fade.modal--feedback(
+    id="modal-feedback"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="modal-feedback"
+    aria-hidden="true")
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header
+                .modal-title Обратный звонок
+                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    +icon('i-delete')
+            form(action="").modal-body
+                .fieldgroup.fieldgroup--modal
+                    label.label Ваше имя *
+                    input.input(type="text" placeholder="Введите имя" required)
+                .fieldgroup.fieldgroup--modal
+                    label.label Телефон *
+                    input.input(type="tel" placeholder="Введите телефон" required)
+                .fieldgroup
+                    button.btn.btn--primary.btn--full(
+                        data-target="#modal-success"
+                        data-toggle="modal"
+                        data-dismiss="modal"
+                    ) Заказать звонок
+                    //button.btn.btn--primary.btn--full Заказать звонок
+                    .modal-text Нажимая на кнопку «Заказать звонок», я даю согласие на обработку персональных данных
+//-#modal-success
+.modal.fade.modal--success(
+    id="modal-success"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="modal-success"
+    aria-hidden="true")
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header
+                .modal-title Спасибо!
+                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    +icon('i-delete')
+            form(action="").modal-body
+                .modal-text Мы свяжемся с вами в ближайшее время <br>График работы: пн-пт, 9:00 - 18:00
+                .fieldgroup
+                    a.btn.btn--bordered(
+                        href="javascript:;"
+                        data-dismiss="modal"
+                    ) Вернуться к покупкам
+

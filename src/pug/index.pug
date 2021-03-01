@@ -1,0 +1,93 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Знакомство с Frontend'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+
+        <div class="box">
+            <h1 class="box__h1">Знакомство с Frontend</h1>
+            <h2 class="box__h2">#1 Погружение</h2>
+            <h3 class="box__h3">Что такое Web?</h3>
+            <dl class="box__term">
+                <dt>Frontend (browser)</dt>
+                <dd>HTML, CSS, JS, jQuery, ReactJS, Vue.js, Angular, Backbone, Polymer etc</dd>
+            </dl>
+            <dl class="box__term">
+                <dt>Backend (server)</dt>
+                <dd>PHP, Node.js, Java, RoR, .Net, C++, C#, Python etc</dd>
+            </dl>
+            <dl class="box__term">
+                <dt>HTML (HyperText Markup Language — «язык гипертекстовой разметки»)</dt>
+                <dd>самый базовый строительный блок Веба. Он определяет содержание и структуру веб-контента.</dd>
+            </dl>
+            <dl class="box__term">
+                <dt>CSS (Cascading Style Sheets — «каскадные таблицы стилей»)</dt>
+                <dd>формальный язык описания внешнего вида веб-страницы, написанной с использованием языка разметки.</dd>
+            </dl>
+            <dl class="box__term">
+                <dt>JavaScript (язык программирования)</dt>
+                <dd>язык сценариев для придания интерактивности веб-страницам.</dd>
+            </dl>
+        </div>
+
+        <div class="box">
+            <h2 class="box__h2">#2 Введение в HTML</h2>
+            <dl class="box__term">
+                <dt>Тег (HTML элемент)</dt>
+                <dd>это основная структурная единица веб-страницы, написанная на языке HTML.</dd>
+            </dl>
+        </div>
+
+        <div class="box">
+            <h2 class="box__h2">#3 Базовая структура HTML</h2>
+            <img class="box__screen" src="./assets/imgs/base_html.jpg" alt="html">
+            <dl class="box__term">
+                <dt>&lt;!DOCTYPE html&gt;</dt>
+                <dd>Элемент предназначен для указания типа текущего документа — DTD (document type definition, описание типа документа).  Это необходимо, чтобы браузер понимал, как следует интерпретировать текущую веб-страницу, поскольку HTML существует в нескольких версиях, кроме того, имеется XHTML (EXtensible HyperText Markup Language, расширенный язык разметки гипертекста), похожий на HTML, но различающийся с ним по синтаксису. Чтобы браузер «не путался» и понимал, согласно какому стандарту отображать веб-страницу и необходимо в первой строке кода задавать &lt;!DOCTYPE&gt;.<br> Есть несколько вариантов DOCTYPE. Самый актуальный - в примере. Он появился в HTML5 , и является актуальным до сих пор.
+                </dd>
+            </dl>
+            <dl class="box__term">    
+                <dt>&lt;html&gt;</dt>
+                <dd>Открывающий тег &lt;html&gt; определяет начало HTML-документа, внутри него хранится «голова» (&lt;head&gt;) и «тело» документа (&lt;body&gt;).
+                </dd>
+            </dl>
+            <dl class="box__term">    
+                <dt>&lt;head&gt;</dt>
+                <dd>Содержимое этого раздела не показывается напрямую на странице, за исключением элемента &lt;title&gt;. Внутри &lt;head&gt; могут располагаться следующие элементы: &lt;base&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;script&gt;, &lt;style&gt; или &lt;title&gt;.
+                </dd>
+            </dl>
+            <dl class="box__term">    
+                <dt>&lt;body&gt;</dt>
+                <dd>Внутри body находится структура документа, все теги, а также может быть подключен JS.</dd>
+            </dl>
+            <dl class="box__term">    
+                <dt>&lt;title&gt;</dt>
+                <dd>Определяет заголовок документа.</dd>
+            </dl>
+            <dl class="box__term">    
+                <dt>&lt;meta&gt;</dt>
+                <dd>является универсальным и добавляет целый класс возможностей, в частности, с помощью метатега, как обобщённо называют этот элемент, можно изменить кодировку страницы, добавить ключевые слова, описание документа и многое другое, предназначенное для браузера или поисковых систем. В частности, чтобы браузер понимал, что имеет дело с кодировкой UTF-8 (Unicode transformation format, формат преобразования Юникод) и добавляется данная строка.
+                </dd>
+            </dl>
+        </div>
+
+        <div class="box">
+            <h2 class="box__h2">#4 Знакомство с тегами</h2>
+            <h3 class="box__h3">Виды тегов</h3>
+            <dl class="box__term">    
+                <dt>парные</dt>
+                <dd>&lt;div&gt;&lt;/div&gt; ; &lt;span&gt;&lt;/span&gt; ; &lt;b&gt;&lt;/b&gt; ... etc</dd>
+            </dl>
+            <dl class="box__term">    
+                <dt>непарные</dt>
+                <dd>&lt;!DOCTYPE html&gt; ; &lt;link&gt; ; &lt;img&gt; ; &lt;input&gt; ; &lt;br&gt; ; &lt;hr&gt; ... etc</dd>
+            </dl>
+            <div class="box__text">
+                <p>Все теги делятся между собой по разным критериям. Самые основные - это парные и непарные теги. Название говорит само за себя. В случае  с парным тегом обязательно должен быть закрывающий тег, с таким же названием но дополнительным символом. Непарные же теги имеют закрывающий символ в конце</p>
+            </div>
+        </div>
+

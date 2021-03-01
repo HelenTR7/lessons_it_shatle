@@ -1,0 +1,45 @@
+@import "../main/parameters";
+
+.btn {
+  display: inline-block;
+  padding: 0 12px;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  height: 44px;
+  line-height: 44px;
+  color: $c-text;
+  background: rgba(0,0,0,0.0);
+  border: 1px solid $c-text;
+  border-radius: 4px;
+  transition: background .3s, color .3s, border .3s;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn--primary {
+  color: #fff;
+  background: $c-primary;
+  border-color: $c-primary;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background: #E34D47;
+    border-color: #E34D47;
+  }
+}
+
+.btn--bordered {
+  color: $c-primary;
+  border-color: $c-primary;
+  &:hover,
+  &:focus {
+    color: #fff;
+    border-color: $c-primary;
+    background-color: $c-primary;
+  }
+}

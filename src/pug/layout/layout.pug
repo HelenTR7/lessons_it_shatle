@@ -1,0 +1,54 @@
+//-настройки БЭМ
+include ../utilities/bemto-setting
+//- глобальные миксины для pug
+include ../utilities/global_mixin
+
+//-глобальные переменные
+- var pixel='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
+- var themeColor='#006BAD'
+
+//-постраничные переменные
+block vars
+    - var pageTitle
+    - var pageBodyClass
+    - var pageHeaderClass
+
+doctype html
+html(lang='ru-RU')
+
+    head
+        meta(name="msapplication-TileColor" content=themeColor)
+        meta(name="theme-color" content=themeColor)
+        meta(charset='UTF-8')
+        meta(name='format-detection', content='telephone=no')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='description', content='')
+
+        title=pageTitle
+
+        link(rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png")
+        link(rel="manifest" href="./favicon/site.webmanifest")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+
+        //-styles
+        link(rel="stylesheet" type="text/css" href="./assets/css/app.css")
+    body(class=pageBodyClass)
+        .wrapper
+            include ../components/header
+            .main
+                block content
+
+            include ../components/footer
+        // Модальные окна    
+        include ../components/modals
+
+
+           
+        //-scripts and plugins
+        script(src="./assets/js/vendors.min.js")
+        script(src="./assets/js/app.js")
+        //- Виджет для перехода по всем страницам проекта
+        //- include ../utilities/pages-viget
