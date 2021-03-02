@@ -1,0 +1,87 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Работа с CSS селекторами'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 Работа с CSS селекторами
+            h2.box__h2 #1 Виды селекторов
+            p
+                span.alert <a href="https://github.com/yoksel/common-words" target="_blank">Шпаргалка по именам классов(или части имени)</a>
+            p
+                span.alert <a href="https://flukeout.github.io/" target="_blank">Упражнения для тренировки!</a>
+            dl.box__term
+                dt простые
+                dd "div" или ".class-name" или "#id-name" и т.д.
+            p
+                span.alert <a href="https://drive.google.com/file/d/1vGYfV_MmQJdxbt9la32HF7pnbqxzcvPD/view?usp=sharing" target="_blank">Ссылка на презентацию -> 6й слайд</a>
+            dl.box__term
+                dt составные (не разделены комбинаторами)
+                dd .class-name.class-name2 или div.class-name
+            dl.box__term
+                dt сложные (разделены комбинаторами)
+            p
+                span.alert <a href="https://drive.google.com/file/d/1vGYfV_MmQJdxbt9la32HF7pnbqxzcvPD/view?usp=sharing" target="_blank">Ссылка на презентацию -> 4й слайд</a>
+            dl.box__term
+                dt список селекторов (перечисление через ",")
+        .box
+            h2.box__h2 #2 Вес селекторов</p>
+            p
+                span.alert <a href="http://css.yoksel.ru/specifity/" target="_blank">Вес селекторов, расширенная статья</a>
+            table
+                tr
+                    td(colspan="2" style="text-align:center;") !important
+                tr
+                    td style=""
+                    td 1,0,0,0
+                tr
+                    td #id
+                    td 0,1,0,0
+                tr
+                    td .class_name
+                    td 0,0,1,0
+                tr
+                    td [attr=value]
+                    td 0,0,1,0
+                tr
+                    td li
+                    td 0,0,0,1
+                tr
+                    td *
+                    td 0,0,0,0
+        .box
+            h2.box__h2 #3 Псевдоклассы
+            dl.box__term
+                dt "состояния"
+                dd :hover
+                dd :focus
+                dd :visited
+                dd :checked
+                dd :disabled
+                dd и т.д.
+            dl.box__term
+                dt "поиск"
+                dd :first-child
+                dd :first-of-type
+                dd :last-child
+                dd :nth-child()
+                dd :not(X)
+        .box
+            h2.box__h2 #4 Псевдоэлементы
+            h3.box__h3 Важное свойство content: '';
+            dl.box__term
+                dt ::before
+            dl.box__term
+                dt ::after
+        .box
+            h2.box__h2 #5 Список всех псевдоклассов и псевдоэлементов
+            p
+                span.alert <a target="_blank" href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/%D0%A1%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B/Pseudo-classes_and_pseudo-elements">см. таблицу в конце статьи</a>
+        .box
+            h2.box__h2  #6 P.s. тонкости отрисовки страницы
+            h3.box__h3 например ".class-name p" сначала найдет все "p", а потом выберет из них те что лежат в ".class-name" - замедляет отрисовку.
+        

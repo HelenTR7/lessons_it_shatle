@@ -1,0 +1,148 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'CSS base'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 CSS base
+            h2.box__h2 #0 Изменение типа элемента, свойство display
+            dl.box__term
+                h3.box__h3 Значения свойства
+                dt inline
+                dd чтобы блочный элемент вел себя как inline-элемент (т. е. не переводился на новую строку).
+            dl.box__term
+                dt block
+                dd если необходимо отобразить строчный элемент как block-элемент (чтобы до и после элемента происходил
+                    | перенос строки).
+            dl.box__term
+                dt inline-block
+                dd «гибрид» — блочный элемент с поведением, как у строчного. В этом случае всё содержимое таких блочных элементов
+                    | будет отображаться, как обычно, но при этом блоки будут вести себя как строчные элементы, выстраиваясь в одной
+                    | строке друг за другом и переносясь на новую строку лишь при необходимости. Схлопывание margin в таких случаях
+                    | перестает действовать.
+        .box
+            h2.box__h2 #1 Единицы измерения
+            dl.box__term
+                dt px(абсолютная)
+                dd размер определяется разрешением экрана.
+            dl.box__term
+                dt rem(относительная)
+                dd % от размера шрифта указанного к тегу html, либо установленного по умолчанию
+            dl.box__term
+                dt em(относительная)
+                dd % от размера шрифта родительского блока либо страницы
+            dl.box__term
+                dt %(относительная)
+                dd процент от размера страницы, родительского или текущего блока. зависит от местоположения и св-в элемента к которому применяется
+            dl.box__term
+                dt vw(относительная)
+                dd определяется от размера ширины окна браузера, 100vw = 100% ширины браузера. При уменьшении ширины окна, уменьшается ширина, высота, шрифт элемента. Шрифт не будет масштабирован при нажатии Ctrl+ или Ctrl-.
+            dl.box__term
+                dt vh(относительная)
+                dd определяется от размера высоты окна браузера, 100vh = 100% высоты браузера.  При уменьшении высоты окна, уменьшается ширина, высота, шрифт элемента. Шрифт не будет масштабирован при нажатии Ctrl+ или Ctrl-.
+        .box
+            h2.box__h2 #2 Работа с box-sizing
+            h3.box__h3 Значения свойства
+            dl.box__term
+                dt content-box (значение по умолчанию в браузере)
+                dd Основывается на стандартах CSS, при этом свойства width и height
+                    | задают ширину и высоту контента и не включают в себя значения отступов,
+                    | полей и границ
+                dd
+                    .test-box__bs-cb content-box
+            dl.box__term
+                dt border-box (самое часто применяемое на практике)
+                dd Свойства width и height включают в себя значения полей и границ,
+                    | но не отступов (margin).
+                dd
+                    .test-box__bs-bb border-box
+        .box
+            h2.box__h2 #3 Работа с width/height
+            dl.box__term
+                dt Пример работы с width/height px
+                dd
+                    .test-box__sizes 300px*50px
+            dl.box__term
+                dt Пример работы с width/height %
+                dd
+                    .test-box__sizes2 50%*50px
+            dl.box__term
+                dt Пример работы с width/height vw
+                dd
+                    .test-box__sizes3 50vw*50px
+
+        .box
+            h2.box__h2 #4 px rem em % vw vh для текста
+            div(style="color: #b1b1b1; font-size: 20px;")
+                p(style="font-size: 16px;") Текст 12px
+                p(style="font-size: 2rem;") Текст 2rem (считает от значения в html)
+                p(style="font-size: 2em;") Текст 2em
+                p(style="font-size: 300%;") Текст 300% (от родительского элемента)
+                p(style="font-size: 5vw;") Текст 5vw
+                p(style="font-size: 5vh;") Текст 5vh
+
+        .box
+            h2.box__h2 #5 Практическое применение em
+            h3.box__h3 Практическое применение em
+            div
+                a.btn-test(href="javascript:;") font-size: 16px (какое значение padding у этого элемента?)
+            div
+                a.btn-test.btn-test--md(href="javascript:;") font-size: 32px; (какое значение padding у этого элемента?)
+
+        .box
+            h2.box__h2 #6 Работа с цветом
+            dl.box__term
+                dt Пример задания цвета именем цвета
+                dd
+                    .test-box__color-name color: red;<br> background: black;
+            dl.box__term
+                dt Пример задания цвета по номеру
+                dd
+                    .test-box__color-hex color: #e6e6e6;<br> background: #000;
+            dl.box__term
+                dt Пример задания прозрачности/полупрозрачности
+                dd
+                    .test-box__color-rgba color: rgba(255, 0, 0, 0.5);<br> background: rgb(0, 0, 0);
+                    .test-box__color-rgba2 background: rgba(0,0,0,0.5);
+                    .test-box__color-rgba3 background: rgba(0,0,0,0.2);
+        .box
+            h2.box__h2 #7 Задание margin/padding/border
+            dl.box__term
+                dt Пример margin(внешние оступы)
+                dd
+                    .test-box__margin см инструменты разработчика margin
+            dl.box__term
+                dt Пример padding(внутренние отступы)
+                dd
+                    .test-box__padding см инструменты разработчика padding
+            dl.box__term
+                dt Пример border(рамка)
+                dd
+                    .test-box__border 1px solid
+                    .test-box__border2 5px solid
+                    .test-box__border3 dashed
+                    .test-box__border4 dotted
+                    p
+                        span.alert дополнительно все свойства рамок #1 -> <a href="http://htmlbook.ru/css/border" target="_blank">ссылка</a>
+                    p
+                        span.alert дополнительно все свойства рамок #2 -> <a href="https://www.w3schools.com/css/css_border.asp" target="_blank">ссылка</a>
+
+        .box
+            h2.box__h2 #8 Margin особенности
+            dl.box__term
+                dt Пример наложения границ соседей(см. инструменты разработчика -> styles)
+                dd
+                    h1.test-box__collapse1 Заголовок
+                    p.test-box__collapse2 Абзац текста
+
+            dl.box__term
+                dt Пример вываливания за родительские границы(см. инструменты разработчика -> styles)
+                dd
+                    .test-box__collapse3
+                        p Абзац текста
+                        p Абзац текста
+                        p Абзац текста

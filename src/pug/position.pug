@@ -1,0 +1,42 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Position + z-index'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 Position + z-index
+            h2.box__h2 #1 Position
+            h3.box__h3 Пример:
+            div(style="position: relative;")
+                .test-box__p-relative.test-box-z-0 relative (в потоке) + z-index: 0
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-static.test-box__p-top.test-box__p-left static (по умолчанию/ в потоке)
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-relative.test-box__p-right relative (в потоке) + right: 25px
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-absolute.test-box__p-top.test-box__p-left.test-box-z-1 absolute (выпадает из потока)  + z-index: 1  + top: 25px + left: 25px
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-static.test-box__p-top.test-box__p-top.test-box-z-5 static (по умолчанию/ в потоке)  + z-index: 5
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-relative.test-box-z-3 relative (в потоке) + z-index: 3
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-fixed.test-box__p-right.test-box__p-bottom fixed (выпадает из потока)  + bottom: 25px
+                .test-box__p-sticky.test-box__p-bottom.test-box-z-2 sticky (липкий блок) + bottom: 25px + z-index: 2
+                .test-box__p-relative relative (в потоке)
+                .test-box__p-relative relative (в потоке)
+        .box
+            h2.box__h2 #2 z-index
+            ul.box__list
+                li z-index работает только для спозиционированных элементов. (т.е. с position отличным от static)
+                li z-index работает для соседних элементов

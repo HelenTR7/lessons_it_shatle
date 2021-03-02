@@ -1,0 +1,45 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Flexboxes'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 Flexboxes
+            h2.box__h2 #1 display: flex;
+            p
+                span.alert <a href="https://wp-kama.ru/id_8045/flex-v-css.html" target="_blank">Отличная статья с визуальными примерами</a>
+        .box
+            h2.box__h2 #2 Основные свойства для построения сетки
+            ul.box__list
+                li flex-wrap (к флекс-контейнеру/ перенос элементов)
+                li align-items (к флекс-контейнеру/ горизонтальная/главная ось)
+                li justify-content (к флекс-контейнеру/ вертикальная/побочная/поперечная ось)
+                li (трюк с margin-left: auto)
+                li align-self (к флекс-элементу/ горизонтальная/главная ось)
+                li flex-direction (к флекс-контейнеру/ направление)
+                li order (к флекс-элементу/ порядок)
+
+            .test-box__flex-container
+                .test-box__flex-element флекс элемент
+                .test-box__flex-element.test-box__fe-2h флекс элемент (высокий)
+                .test-box__flex-element флекс элемент
+                .test-box__flex-element флекс элемент
+                .test-box__flex-element флекс элемент
+                .test-box__flex-element флекс элемент
+                .test-box__flex-element.test-box__fe-2h флекс элемент (высокий)
+                .test-box__flex-element флекс элемент
+                .test-box__flex-element.test-box__single-styles флекс элемент
+                .test-box__flex-element.test-box__fe-2w флекс элемент (широкий)
+                .test-box__flex-element флекс элемент
+                .test-box__flex-element флекс элемент
+                .test-box__flex-element флекс элемент
+        .box
+            h2.box__h2 #3 Принцип построения сетки
+        .box
+            h2.box__h2 #4 Подводные камни
+        .box
+            h2.box__h2 #5 Ссылка на макет

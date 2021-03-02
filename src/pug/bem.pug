@@ -1,0 +1,28 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'БЭМ методология'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 #1 БЭМ
+            p
+                span.alert <a href="https://nicothin.pro/idiomatic-pre-CSS/" target="_blank">Ссылка на статью простым языком</a>
+            // Пример разметки
+            .product-item
+                a(href="#").product-item__top
+                    .product-item__img-wrap
+                        img.product-item__img(src="http://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxzZWFyY2h8MXx8cHJvZHVjdHx8MHx8fA&ixlib=rb-1.2.1&q=80&w=1080" alt="img")
+                    .product-item__badges
+                        .badge.badge--hit Хит
+                        .badge.badge--new Новинка
+                .product-item__bottom
+                    a.product-item__title(href="#") Название товара, очеень длинное название, нужно предусмотреть чтобы не ломалась верстка!
+                    .product-item__prices
+                        .product-item__price-current 9,30 руб
+                        .product-item__price-old 14,50 руб
+                    .product-item__buy
+                        a.btn.btn--primary(href="#") Купить
