@@ -12,8 +12,12 @@ block content
             h2.box__h2 #1 display: flex;
             p
                 span.alert <a href="https://wp-kama.ru/id_8045/flex-v-css.html" target="_blank">Отличная статья с визуальными примерами</a>
+            p
+                span.alert <a href="http://flexboxfroggy.com/#ru">Игра для тренировки</a>
+
         .box
             h2.box__h2 #2 Основные свойства для построения сетки
+            img.box__screen(src="./assets/imgs/flexbox-info.png")
             ul.box__list
                 li flex-wrap (к флекс-контейнеру/ перенос элементов)
                 li align-items (к флекс-контейнеру/ горизонтальная/главная ось)
@@ -22,24 +26,83 @@ block content
                 li align-self (к флекс-элементу/ горизонтальная/главная ось)
                 li flex-direction (к флекс-контейнеру/ направление)
                 li order (к флекс-элементу/ порядок)
-
-            .test-box__flex-container
-                .test-box__flex-element флекс элемент
-                .test-box__flex-element.test-box__fe-2h флекс элемент (высокий)
-                .test-box__flex-element флекс элемент
-                .test-box__flex-element флекс элемент
-                .test-box__flex-element флекс элемент
-                .test-box__flex-element флекс элемент
-                .test-box__flex-element.test-box__fe-2h флекс элемент (высокий)
-                .test-box__flex-element флекс элемент
-                .test-box__flex-element.test-box__single-styles флекс элемент
-                .test-box__flex-element.test-box__fe-2w флекс элемент (широкий)
-                .test-box__flex-element флекс элемент
-                .test-box__flex-element флекс элемент
-                .test-box__flex-element флекс элемент
+            h3.box__h3 Контейнеру flex-direction: row; (по умолчанию)
+            .test-box__flex-container(style="display:flex;")
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 3 флекс элемент 25%
+            h3.box__h3 Контейнеру flex-direction: row; (по умолчанию) + элементу margin-left:auto;
+            .test-box__flex-container(style="display:flex;")
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3(style="margin-left:auto;") 3 флекс элемент 25% margin-left:auto;
+            h3.box__h3 Контейнеру flex-direction: row-reverse;
+            .test-box__flex-container(style="display:flex; flex-direction: row-reverse;")
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 3 флекс элемент 25%
+            h3.box__h3 Контейнеру flex-direction: column;
+            .test-box__flex-container(style="display:flex; flex-direction:column;")
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 3 флекс элемент 25%
+            h3.box__h3 Контейнеру flex-direction: column-reverse;
+            .test-box__flex-container(style="display:flex; flex-direction:column-reverse;")
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 3 флекс элемент 25%
+            h3.box__h3 Контейнеру justify-content: flex-end;
+            .test-box__flex-container(style="display:flex; justify-content: flex-end;")
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 3 флекс элемент 25%
+            h3.box__h3 Контейнеру justify-content: center;
+            .test-box__flex-container(style="display:flex; justify-content: center;")
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 3 флекс элемент 25%
+            h3.box__h3 Контейнеру justify-content: space-between;
+            .test-box__flex-container(style="display:flex; justify-content: space-between;")
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 3 флекс элемент 25%
+            h3.box__h3 Контейнеру justify-content: space-around;
+            .test-box__flex-container(style="display:flex; justify-content: space-around;")
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 3 флекс элемент 25%
+            h3.box__h3 Контейнеру: height: 50vh; /
+                        | flex-direction: column; /
+                        | align-items: center; /
+                        | justify-content: space-between;
+            .test-box__flex-container(style="height: 50vh; display:flex; flex-direction: column; align-items: center; justify-content: space-between;")
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 3 флекс элемент 25%
         .box
             h2.box__h2 #3 Принцип построения сетки
-        .box
+            .test-box__row
+                .test-box__flex-element.test-box__flex-element--c1 1 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 2 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 3 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c1 4 флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c2 5 флекс элемент флекс элемент 25%
+                .test-box__flex-element.test-box__flex-element--c3 6 флекс элемент 25%
+            .test-box__container(style="width: 1023px; margin: 0 auto;")
+                .test-box__row(style="margin: 0 -10px; padding: 0;")
+                    .test-box__flex-element.test-box__flex-element--c1(style="padding: 0 10px; border: 0;")
+                        div контент колонки контент колонки контент колонки контент колонки
+                    .test-box__flex-element.test-box__flex-element--c2(style="padding: 0 10px; border: 0;")
+                        div контент колонки контент колонки контент колонки
+                    .test-box__flex-element.test-box__flex-element--c3(style="padding: 0 10px; border: 0;")
+                        div контент колонки
+                    .test-box__flex-element.test-box__flex-element--c1(style="padding: 0 10px; border: 0;")
+                        div контент колонки контент колонки контент колонки контент колонки
+                    .test-box__flex-element.test-box__flex-element--c2(style="padding: 0 10px; border: 0;")
+                        img(src="./assets/imgs/cat.jpg" style="max-width: 100%;")
+                    .test-box__flex-element.test-box__flex-element--c3(style="padding: 0 10px; border: 0;")
+                        div контент колонки контент колонки контент колонки контент колонки
+        //-.box
             h2.box__h2 #4 Подводные камни
-        .box
+        //-.box
             h2.box__h2 #5 Ссылка на макет
