@@ -1,8 +1,5 @@
 @import "../main/parameters";
 
-.main {
-    margin-top: 180px;
-}
 
 .box {
     padding: 20px 0 30px;
@@ -42,6 +39,7 @@
         margin: 0 0 15px;
     }
     &__list {
+        margin-top: 20px;
         color:  #b1b1b1;
     }
     &__list li {
@@ -58,6 +56,9 @@
         width: 7px;
         border-radius: 50%;
         background: #d94f5c;
+    }
+    &__list p {
+        margin: 0 0 5px;
     }
     &__term {
         font-style: italic;
@@ -88,6 +89,10 @@
         max-width: 100%;
         border: 1px solid $c-add;
         margin: 20px 0 30px;
+    }
+
+    input {
+        max-width: 350px;
     }
 }
 
@@ -130,16 +135,6 @@
 .tab2 {
     display: block;
     padding-left: 40px;
-}
-
-
-.link {
-    text-align: center;
-    margin: 15px 0;
-}
-
-.link a {
-    color: green;
 }
 
 .test-box {

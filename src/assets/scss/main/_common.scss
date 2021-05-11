@@ -94,6 +94,7 @@ input[type="tel"],
 input[type="text"], 
 input[type="email"], 
 input[type="password"], 
+input[type="number"],
 textarea {
     background: #fff;
     border: 1px solid #E8E8E8;
@@ -107,7 +108,8 @@ textarea {
 input[type="tel"]:focus,
 input[type="text"]:focus, 
 input[type="email"]:focus, 
-input[type="password"]:focus, 
+input[type="password"]:focus,
+input[type="number"]:focus,
 textarea:focus {
     border-color: $c-primary;
 }
@@ -124,6 +126,7 @@ input[type="tel"]:focus::placeholder,
 input[type="text"]:focus::placeholder,
 input[type="email"]:focus::placeholder,
 input[type="password"]:focus::placeholder,
+input[type="number"]:focus::placeholder,
 textarea:focus::placeholder {
     opacity: 0;
 }
@@ -155,6 +158,7 @@ button {
     display: inline-block;
     font-size: inherit;
     font-family: inherit;
+    color: #fff;
 }
 
 input[type="submit"]:hover, 

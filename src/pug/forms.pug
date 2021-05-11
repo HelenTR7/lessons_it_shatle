@@ -1,0 +1,187 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Формы'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 Формы
+            h2.box__h2 #1 Основы
+            dl.box__term
+                dt &lt;form action="#"&gt;&lt;/form&gt;
+                dd тег используется для создания формы HTML для ввода данных пользователя. Аттрибут action - определяет , куда посылать данные формы , когда форма была отправлена.
+            dl.box__term
+                dt &lt;input&gt;&lt;/input&gt;
+                dd создает большинство полей формы. Атрибуты элемента отличаются в зависимости от типа поля, для создания которого используется этот элемент. С помощью css-стилей можно изменить размер шрифта, тип шрифта, цвет и другие свойства текста, а также добавить границы, цвет фона и фоновое изображение. Ширина поля задается свойством width.
+            dl.box__term
+                dt &lt;textarea&gt;&lt;/textarea&gt;
+                dd используется вместо элемента input type="text", когда нужно создать большие текстовые поля. Текст, отображаемый как исходное значение, помещается внутрь тега.
+                dd
+                    textarea(placeholder="поле многострочного ввода инфо")
+            dl.box__term
+                dt &lt;select&gt;&lt;/select&gt; и &lt;option&gt;&lt;/option&gt;
+                dd Списки дают возможность расположить большое количество пунктов компактно. Раскрывающиеся списки создаются при помощи элемента select. Они позволяют выбрать одно или несколько значений из предложенного множества. По умолчанию в поле списка отображается его первый элемент. Для добавления в список пунктов используются элементы option, которые располагаются внутри select.
+                dd
+                    select
+                        option первое значение
+                        option второе значение
+                        option третье значение
+                        option четвертое значение
+                dd
+                    select(multiple)
+                        option первое значение
+                        option второе значение
+                        option третье значение
+                        option четвертое значение
+            dl.box__term
+                dt &lt;label&gt;&lt;/label&gt;
+                dd Надписи к элементам формы создаются с помощью элемента label. Существует два способа группировки надписи и поля. Если поле находится внутри элемента <label>, то атрибут for указывать не нужно.
+            dl.box__term
+                dt &lt;button&gt;&lt;/button&gt;
+                dd создает кликабельные кнопки. В отличие от кнопок, созданных input (input type="submit", input type="image", input type="reset", input type="button"), внутрь элемента button можно поместить контент — текст или изображение. Для корректного отображения элемента button разными браузерами нужно указывать атрибут type, например, button type="submit". Кнопки позволяют пользователям передавать данные в форму, очищать содержимое формы или предпринимать какие-либо другие действия. Можно создавать границы, изменять фон и выравнивать текст на кнопке.
+            dl.box__term
+                dt Пример простой формы #1 (связка for - id)
+                dd
+                    img.box__screen(src="./assets/imgs/form.jpg")
+                dd
+                    <form action="/action_page.php" method="get">
+                    <label for="fname">Имя:</label>
+                    <input type="text" id="fname" name="fname">
+                    <label for="lname">Фамилия:</label>
+                    <input type="text" id="lname" name="lname">
+                    <input type="submit" value="Отправить">
+                    </form>
+            dl.box__term
+                dt Пример простой формы #2 (связка по вложенности)
+                dd
+                    img.box__screen(src="./assets/imgs/form2.jpg")
+                dd
+                    <form action="/action_page.php" method="get">
+                    <label class="label">
+                    <span class="title">Имя:</span>
+                    <input type="text" name="fname">
+                    </label>
+                    <label class="label">
+                    <span class="title">Фамилия:</span>
+                    <input type="text" name="lname">
+                    </label>
+                    <input type="submit" value="Отправить">
+                    </form>
+        .box
+            h2.box__h2 #2 Группировка элементов формы
+            dl.box__term
+                dt &lt;fieldset&gt;&lt;/fieldset&gt;
+                dd предназначен для группировки элементов, связанных друг с другом, разделяя таким образом форму на логические фрагменты.
+            dl.box__term
+                dt &lt;legend&gt;&lt;/legend&gt;
+                dd определяет заголовок для элемента fieldset
+                dd
+                    img.box__screen(src="./assets/imgs/form3.jpg")
+                dd
+                    <form action="/action_page.php">
+                    <fieldset>
+                    <legend>Личные данные:</legend>
+                    <label for="fname">Имя:</label>
+                    <input type="text" id="fname" name="fname"><br>
+                    <label for="lname">Фамилия:</label>
+                    <input type="text" id="lname" name="lname"><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br>
+                    <label for="birthday">День рождения:</label>
+                    <input type="date" id="birthday" name="birthday"><br>
+                    <input type="submit" value="Отправить">
+                    </fieldset>
+                    </form>
+        form.box(action="#")
+            h2.box__h2 #3 Основные значения type для input
+            ul.box__list
+                li
+                    p type="text" - поле для ввода текстовой информации(значение по умолчанию)
+                    p
+                        input(type="text")
+                li
+                    p type="email" - поле для ввода email
+                    p
+                        input(type="email")
+                li
+                    p type="number" - поле для ввода цифр
+                    p
+                        input(type="number")
+                li
+                    p type="password" - поле для ввода пароля
+                    p
+                        input(type="password")
+                li
+                    p type="file" - поле для загрузки файлов
+                    p
+                        input(type="file")
+                li
+                    p type="checkbox" - для группы полей этого типа - можно выбрать только несколько из группы
+                    p связка в группу по аттрибуту name c одинаковым значением
+                    p
+                        input(type="checkbox" name="t1")
+                        input(type="checkbox" name="t1")
+                        input(type="checkbox" name="t1")
+                        input(type="checkbox" name="t1")
+                li
+                    p type="radio" - для группы полей этого типа - можно выбрать только один из группы
+                    p связка в группу по аттрибуту name c одинаковым значением
+                    p
+                        input(type="radio" name="t2")
+                        input(type="radio" name="t2")
+                        input(type="radio" name="t2")
+                        input(type="radio" name="t2")
+            p
+                span.alert
+                    a(href="https://www.w3schools.com/html/html_form_input_types.asp" target="_blank") расширенная инфо по всем типам input
+        form.box(action="#")
+            h2.box__h2 #4 Основные аттрибуты для input
+            h3.box__h3 ( Смотрим в инструментах разработчика)
+            ul.box__list
+                li
+                    p placeholder - задает короткую подсказку, описывающую ожидаемое значение элемента
+                    p
+                        input(type="text" placeholder="введите имя")
+                li
+                    p value - задает значение элемента по умолчанию
+                    p
+                        input(type="text" value="Иван Иванов")
+                li
+                    p name - используется для обращения к полю в JavaScript или на данные поля после отправки формы (обязательно для свзяки полей типа checkbox и radio в группу)
+                    p
+                        input(type="text" name="user_name")
+                li
+                    p readonly - указывает, что поле ввода доступно только для чтения. Эл-т не редактируется, но отправляется при отправке формы, фокусится.
+                    p
+                        input(type="text" placeholder="введите имя" value="Иван Иванов" readonly)
+                li
+                    p required - обязательное для заполнения поле, форма не будет отправлена пока поле не заполнено
+                    p
+                        input(type="text" placeholder="введите имя" required)
+                li
+                    p checked - указывает, что элемент input должен быть предварительно выбран при загрузке страницы (для type="checkbox" или type="radio")
+                    p
+                        input(type="checkbox" name="t3")
+                        input(type="checkbox" name="t3" checked)
+                        input(type="checkbox" name="t3" checked)
+                        input(type="checkbox" name="t3")
+                    p
+                        input(type="radio" name="t4")
+                        input(type="radio" name="t4")
+                        input(type="radio" name="t4" checked)
+                        input(type="radio" name="t4")
+                li
+                    p disabled - указывает, что элемент input должен отключен. Эл-т не редактируется и не отправляется при отправке формы, не фокусится.
+                    p
+                        input(type="text" value="Иван Иванов" disabled)
+                li
+                    p multiple - указывает, что пользователь может ввести более одного значения в элемент (например прикрепить несколько файлов в поле типа file, или для select)
+                    p
+                        input(type="file" multiple)
+            p
+                span.alert
+                    a(href="https://www.w3schools.com/tags/tag_input.asp" target="_blank") расширенная инфо по всем аттрибутам input
+

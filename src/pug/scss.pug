@@ -1,0 +1,61 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'SCSS'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 SCSS
+            h2.box__h2 #1 Основная информация
+            dl.box__term
+                dt SCSS
+                dd это метаязык на основе CSS, предназначенный для увеличения уровня абстракции CSS кода и упрощения файлов каскадных таблиц стилей.
+        .box
+            h2.box__h2 #2 Преимущества SCSS или проблемы CSS
+            ul.box__list
+                li Большие усилия для внесения небольших изменений
+                li Трудности при структурировании кода
+                li Избыточность кода
+                li Бесконечные строки CSS-классов и правил
+        .box
+            h2.box__h2 #3 Возможности
+            dl.box__term
+                dt Переменные
+                dd В SCSS переменная обозначается знаком доллара ($color: #9c27b0). В переменную можно записать любое значение свойства, не только цвет.
+            dl.box__term
+                dt Вложенные правила
+                dd вы можете вкладывать CSS свойства, в несколько наборов скобок {}. Это сделает ваш CSS чище и понятней.
+                dd + при компиляции пустые свойства не попадут в итоговый файл
+                dd
+                    img.box__screen(src="./assets/imgs/scss0.jpg")
+            dl.box__term
+                dt Вложенные правила &
+                dd используя & можно сократить запись. Удобно использовать для написания правил по БЭМ
+                dd
+                    img.box__screen(src="./assets/imgs/scss1.jpg")
+        .box
+            h2.box__h2 #4 Расширенные возможности(дополнить)
+            dl.box__term
+                dt Лучшая реализация операторов
+                dd вы можете суммировать, вычитать, делить и умножать CSS значения.
+                //dd
+                    img.box__screen(src="./assets/imgs/scss2.jpg")
+            dl.box__term
+                dt Функции
+                dd позволяет многократно использовать CSS стили, как функции.
+                //dd
+                    img.box__screen(src="./assets/imgs/scss3.jpg")
+            dl.box__term
+                dt Миксины
+                dd позволяют один раз создать набор правил, чтобы потом использовать их многократно или смешивать с другими правилами. Например, миксины используют для создания отдельных тем макета.
+                //dd
+                    img.box__screen(src="./assets/imgs/scss4.jpg")
+            p
+                span.alert
+                    a(href="https://medium.com/nuances-of-programming/%D0%BF%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9-%D0%B3%D0%B0%D0%B9%D0%B4-%D0%BF%D0%BE-scss-sass-b09ae0c87afe" target="_blank") Ссылка на отличный гайд на русском
+            p
+                span.alert
+                    a(href="https://pugjs.org/api/getting-started.html" target="_blank") Ссылка на документацию

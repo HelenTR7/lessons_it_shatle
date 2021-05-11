@@ -1,0 +1,70 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'CSS градиенты'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 CSS градиенты
+            h2.box__h2 #1 Линейный градиент linear-gradient()
+            dl.box__term
+                dt Градиенты создаются с помощью функций linear-gradient() и radial-gradient(). Градиентный фон можно устанавливать в свойствах background, background-image, border-image и list-style-image.
+                dd background: linear-gradient(угол / сторона или угол наклона с помощью ключевого слова (пары ключевых слов), первый цвет, второй цвет и т.д.);
+        .box
+            h2.box__h2 #2 Направление градиента
+            dl.box__term
+                dt с помощью угла наклона в градусах deg, значение которого определяет угол наклона линии внутри элемента.
+                dd background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+                dd
+                    div(style="height: 150px; width: 250px; background: linear-gradient(45deg, #EECFBA, #C5DDE8);")
+            dl.box__term
+                dt с помощью ключевых слов to top, to right, to bottom, to left, которые соответствуют углу градиента, равному 0deg, 90deg, 180deg и 270deg соответственно.
+                dd background: linear-gradient(to right, #F6EFD2, #CEAD78);
+                dd
+                    div(style="height: 150px; width: 250px; background: linear-gradient(to right, #F6EFD2, #CEAD78);")
+            dl.box__term
+                dt Для неравномерного распределения цветов указывается начальная позиция каждого цвета через точки остановки градиента, так называемые color stops. Точки остановки задаются в %, где 0% — начальная точка, 100% — конечная точка
+                dd background: linear-gradient(to top, #E4AF9D 20%, #E4E4D8 50%, #A19887 80%);
+                dd
+                    div(style="height: 150px; width: 250px; background: linear-gradient(to top, #E4AF9D 20%, #E4E4D8 50%, #A19887 80%);")
+            dl.box__term
+                dt Для чёткого распределения цветных полос каждый последующий цвет нужно начинать с точки остановки предыдущего цвета
+                dd background: linear-gradient(to right, #FFDDD6 20%, #FFF9ED 20%, #FFF9ED 80%, #DBDBDB 80%);
+                dd
+                    div(style="height: 150px; width: 250px; background: linear-gradient(to right, #FFDDD6 20%, #FFF9ED 20%, #FFF9ED 80%, #DBDBDB 80%);")
+        .box
+            h2.box__h2 #3 Радиальный градиент radial-gradient()
+            dl.box__term
+                dt Радиальный градиент отличается от линейного тем, что цвета выходят из одной точки (центра градиента) и равномерно распределяются наружу, рисуя форму круга или эллипса.
+                dd background: radial-gradient(форма градиента / размер / позиция центра, первый цвет, второй цвет и т.д.);
+            dl.box__term
+                dt Форма градиента
+                dd определяется ключевыми словами circle или ellipse. Если форма не задана, по умолчанию радиальный градиент принимает форму эллипса.
+                dd background: radial-gradient(white, red);
+                dd
+                    div(style="height: 150px; width: 250px; background: radial-gradient(white, red);")
+            dl.box__term
+                dt Позиция центра
+                dd задаётся с помощью ключевых слов, используемых в свойстве background-position, с добавлением приставки at. Если позиция центра не задана, используется значение по умолчанию at center.
+                dd background: radial-gradient(at top, #fff, red);
+                dd
+                    div(style="height: 150px; width: 250px; background: radial-gradient(at top, #fff, red);")
+            dl.box__term
+                dt Размеры градиента
+                dd С помощью пары значений, указанных в единицах длины %, em или px, можно управлять размером эллипсообразного градиента. Первое значение задает ширину эллипса, второе — высоту.
+                dd background: radial-gradient(40% 50%, #fff, red);
+                dd
+                    div(style="height: 150px; width: 250px; background: radial-gradient(40% 50%, #fff, red);")
+        .box
+            h2.box__h2 #4 Комбинация градиента и фонового изображения
+            dl.box__term
+                dt За счёт комбинации градиента и изображения можно создавать интересные эффекты. Для градиента нужно использовать полупрозрачные цвета, чтобы картинка оставалась видимой.
+                dd background: linear-gradient(45deg, rgba(103, 0, 31, .8), rgba(34, 101, 163, .5)), url(https://html5book.ru/wp-content/uploads/2016/12/photo-8.jpg);
+                dd background-size: cover;
+                dd
+                    div(style="height: 150px; width: 250px; background: linear-gradient(45deg, rgba(103, 0, 31, .8), rgba(34, 101, 163, .5)), url(https://html5book.ru/wp-content/uploads/2016/12/photo-8.jpg); background-size: cover;")
+
+

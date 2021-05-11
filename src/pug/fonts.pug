@@ -1,0 +1,31 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Шрифты'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 Шрифты
+            h2.box__h2 #1 Основная инфо
+            dl.box__term
+                dt Плагин для figma позволяющий просмотреть все шрифты используемые в макете
+                dd
+                    span.alert
+                        a(href="https://www.figma.com/community/plugin/746097413727734148/Font-Fascia" target="_blank") Font-Fascia
+            dl.box__term
+                dt Сервисы где можно взять нужные шрифты:
+                dd
+                    span.alert
+                        a(href="https://fonts.google.com/" target="_blank") Google Fonts
+                dd
+                    span.alert
+                        a(href="https://webfonts.pro/" target="_blank") Webfonts
+                        //https://google-webfonts-helper.herokuapp.com/fonts/bree-serif?subsets=latin
+
+
+
+
+

@@ -1,0 +1,114 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Gulp'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 Gulp
+            h2.box__h2 #1 Основные понятия
+            dl.box__term
+                dt Сборщик
+                dd это специальная утилита которая позволяет сжимать исходный код, изображения, преобразовывать код из препроцессоров в обычный CSS/JS/HTML.
+            dl.box__term
+                dt Grunt
+                dd менеджер задач для автоматического выполнения рутинных операций, написанный на языке программирования JavaScript. Программное обеспечение использует командную строку для запуска задач, определённых в файле Gruntfile.
+            dl.box__term
+                dt Webpack
+                dd это пакет модулей JavaScript с открытым исходным кодом. Это пакет модулей в основном для JavaScript, но он может преобразовывать внешние ресурсы, такие как HTML, CSS и изображения, если включены соответствующие загрузчики.
+            dl.box__term
+                dt Gulp
+                dd это таск-менеджер для автоматического выполнения часто используемых задач, написанный на языке программирования JavaScript. Программное обеспечение использует командную строку для запуска задач, определённых в файле Gulpfile. Создан как ответвление от проекта Grunt, чтоб взять из него лучшие практики.
+            dl.box__term
+                dt npm
+                dd менеджер пакетов, входящий в состав Node.js. Установка пакета производится при помощи команды: npm install <packagename> Все доступные для установки пакеты и их краткое описание: npm search Этой же командой можно производить выборочный поиск пакетов.
+        .box
+            h2.box__h2 #2 Настройка окружения
+            dl.box__term
+                dt Проверка установлен ли Node.js
+                dd вводим в терминале команду node -v
+                p
+                    img.box__screen(src="./assets/imgs/node.jpg")
+            dl.box__term
+                dt Если не установлен Node.js
+                dd скачиваем с офиц сайта и устанавливаем свежую стабильную версию&nbsp;
+                dd ВАЖНО! ставим всё по умолчанию, никакие доп пакеты предлагаемые в процессе установки не нужны
+                dd
+                    a(href="https://nodejs.org/en/" target="_blank") https://nodejs.org/en/
+                p
+                    img.box__screen(src="./assets/imgs/gulp0.jpg")
+                dd после этого необходимо переоткрыть терминал и снова проверить версию Node.js. Если версия появилась, Node.js установлен.
+                dd если вы видите ошибку npm - command not found, вам необходимо установить npm при помощи команды в терминале npm install npm@latest -g
+            dl.box__term
+                dt Установка gulp глобально
+                dd npm install --global gulp-cli
+                p
+                    img.box__screen(src="./assets/imgs/gulp.jpg")
+                dd проверка версии gulp -v
+        .box
+            h2.box__h2 #3 Создание проекта
+            ul.box__list
+                li Создаем репозиторий на гитхабе
+                li Клонируем себе (git clone "путь до репозитория")
+                    p
+                        img.box__screen(src="./assets/imgs/project1.jpg")
+                    p
+                        img.box__screen(src="./assets/imgs/project2.jpg")
+                li Заходим в папку будущего проекта
+                    p
+                        img.box__screen(src="./assets/imgs/project3.jpg")
+                li Далее один из вариантов
+            h3.box__h3 Вариант №1 - использование готовой сборки
+            ul.box__list
+                li Самый простой вариант - скачиваем себе чистую готовую сборку архивом ->
+                    a(href="https://github.com/HelenTR7/gulp_clear") https://github.com/HelenTR7/gulp_clear
+                li Копируем файлы в папку своего проекта(с заменой README.md)
+                    p
+                        img.box__screen(src="./assets/imgs/project9.jpg")
+                li Устанавливаем необходимые для работы сборки пакеты, команда npm install (или коротко npm i). После этого в проект будет добавлена папка node_modules
+                    p
+                        img.box__screen(src="./assets/imgs/project10.jpg")
+                li Если команда не работает то проверьте правильность пути по которому вы вводите команду.
+                    p
+                        img.box__screen(src="./assets/imgs/project11.jpg")
+                li Теперь можно запускать режимы настроенные в данной сборке, смотрим файл README.md
+                    p
+                        img.box__screen(src="./assets/imgs/project13.jpg")
+                li Запускаем режим для разработки - gulp
+                    p
+                        img.box__screen(src="./assets/imgs/project12.jpg")
+                li Если после команды gulp вылезла ошибка как на скрине ниже, то запускаем VSCode от имени админимстратора,
+                    | вводим команду Set-ExecutionPolicy RemoteSigned и со всем соглашаемся, после снова запускаем команду gulp
+                    p
+                        img.box__screen(src="./assets/imgs/project_error.jpg")
+                li Если после команды gulp вылезла ошибка как на скрине ниже, то запускаем VSCode от имени админимстратора,
+                    | вводим рекомендуемую команду npm rebuild node-sass, после снова запускаем команду gulp
+                    p
+                        img.box__screen(src="./assets/imgs/project_error2.jpg")
+                li После успешного запуска должна открыться вкладка в вашем браузере по умолчанию с запущенной index страницей
+                    p
+                        img.box__screen(src="./assets/imgs/project14.jpg")
+                li Можно писать код :)
+            h3.box__h3 Вариант №2 - создание сборки с нуля
+            ul.box__list
+                li Запускаем команду npm init, заполняем поля либо оставляем пустым соглашаясь нажимая enter, в конце пишем yes
+                    p
+                        img.box__screen(src="./assets/imgs/project4.jpg")
+                    p
+                        img.box__screen(src="./assets/imgs/project5.jpg")
+                li Проверяем, что package.json создан по завершении
+                    p
+                        img.box__screen(src="./assets/imgs/project6.jpg")
+                li Устанавливаем первый пакет в свежий проект (добавим gulp). Команда npm i gulp
+                    p
+                        img.box__screen(src="./assets/imgs/project7.jpg")
+                li Проверяем, что пакет с его зависимостями добавлен в проект (Будет сформирована папка node_modules и файл package-lock.json)
+                    p
+                        img.box__screen(src="./assets/imgs/project8.jpg")
+                li Дальше нужно добавить все необходимые для работы пакеты, разметить структуру исходных файлов проекта, написать команды для gulp
+
+
+

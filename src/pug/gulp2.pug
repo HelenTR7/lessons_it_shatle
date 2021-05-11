@@ -1,0 +1,33 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Работа с сборкой'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 Работа с сборкой
+            h2.box__h2 #1 Базовая работа
+            h3.box__h3 Для работы над вторым макетом
+            dl.box__term
+                dt Файл layout.pug
+                dd базовая разметка страницы(менять не нужно)
+                dd
+                    img.box__screen(src="./assets/imgs/pr1.jpg")
+            dl.box__term
+                dt Файл index.pug
+                dd разметка главной страницы(пишем код html в синтаксисе pug здесь)
+                dd
+                    img.box__screen(src="./assets/imgs/pr2.jpg")
+            dl.box__term
+                dt Файл app.scss
+                dd стили сайта(пишем код css в синтаксисе scss здесь)
+                dd
+                    img.box__screen(src="./assets/imgs/pr3.jpg")
+        .box
+            h2.box__h2 #2 Пример готового проекта
+            p
+                span.alert
+                    a(href="https://github.com/HelenTR7/ready_project_gulp" target="_blank") https://github.com/HelenTR7/ready_project_gulp

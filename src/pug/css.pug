@@ -1,0 +1,70 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'CSS свойства'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 CSS свойства
+            h2.box__h2 #1 Свойство box-shadow
+            dl.box__term
+                dt box-shadow: 5px 10px;
+                dd позволяет задать тень элементу,
+                dd
+                    div(style="background:#e6e6e6; height:100px;width:250px; margin: 0 0 30px; box-shadow: 5px 10px red;")
+                dd
+                    div(style="background:#e6e6e6; height:100px;width:250px; margin: 0 0 30px; box-shadow: 5px 10px 5px red;")
+                dd
+                    div(style="background:#e6e6e6; height:100px;width:250px; margin: 0 0 30px; box-shadow: 5px 10px 5px 15px red;")
+                dd
+                    div(style="background:#e6e6e6; height:100px;width:250px; margin: 0 0 45px; box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;")
+                dd
+                    span.alert
+                        a(href="https://www.w3schools.com/cssref/css3_pr_box-shadow.asp" target="_blank") Расширенно про box-shadow
+        .box
+            h2.box__h2 #3 Свойство background
+            dl.box__term
+                dt background-color: color
+                dd определяет цвет фона элемента
+                dd
+                    div(style="height: 100px; width: 100%; background-color: rgba(255,0,0,0.3)")
+            dl.box__term
+                dt background-image: url("path")
+                dd определяет изображение которое используется как фон элемента (покажет столько сколько влезет в элемент)
+                dd
+                    div(style="height: 200px; width: 100%; background-image: url('./assets/imgs/cat2.jpg')")
+            dl.box__term
+                dt background-repeat: repeat/no-repeat/repeat-x/repeat-y/ ...
+                dd по умолчанию картинка повторяется по вертикали и горизонтали, можно отменить
+                dd
+                    div(style="height: 200px; width: 100%; background-image: url('./assets/imgs/cat2.jpg'); background-repeat: no-repeat")
+            dl.box__term
+                dt background-position: center/top right/100% 0
+                dd позиционирование картинки в элементе
+                dd
+                    div(style="height: 200px; width: 100%; background-image: url('./assets/imgs/cat2.jpg'); background-position: center;")
+            dl.box__term
+                dt background-size: auto/cover/contain/300px 50px
+                dd размер картинки в элементе
+                dd
+                    div(style="height: 200px; width: 100%; background-image: url('./assets/imgs/cat2.jpg'); background-size: contain;")
+            dl.box__term
+                dt background-attachment: scroll/fixed
+                dd свойство определяет, должно ли фоновое изображение прокручиваться или фиксироваться (не будет прокручиваться вместе с остальной частью страницы)
+                dd
+                    div(style="height: 200px; width: 100%; background-image: url('./assets/imgs/cat2.jpg'); background-attachment: fixed;")
+            dl.box__term
+                dt background(краткая запись свойства)
+                dd background: #ffffff url('./assets/imgs/cat2.jpg') no-repeat right top;
+                dd
+                    div(style="height: 200px; width: 100%; background: #ffffff url('./assets/imgs/cat2.jpg') no-repeat right top;")
+                dd
+                    span.alert
+                        a(href="https://www.w3schools.com/cssref/css3_pr_background.asp" target="_blank") Расширенно про background
+
+
+
+

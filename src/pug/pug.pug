@@ -1,0 +1,59 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'PUG'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    .container
+        .box
+            h1.box__h1 PUG
+            h2.box__h2 #1 Основная информация
+            dl.box__term
+                dt Препроцессор
+                dd это программа, которая берёт один тип данных и преобразует его в другой тип данных.
+            dl.box__term
+                dt Pug
+                dd это шаблонизатор и html-препроцессор, написанный на javascript для node.js. Pug имеет целый ряд преимуществ по сравнению с обычным HTML.
+        .box
+            h2.box__h2 #2 Базовый синтаксис
+            dl.box__term
+                dt Аттрибуты и классы
+                dd
+                    img.box__screen(src="./assets/imgs/pug1.jpg")
+            dl.box__term
+                dt Создание миксина, в разметке ничего не будет т.к. мы его только создали и еще не вызвали
+                dd
+                    img.box__screen(src="./assets/imgs/pug2.jpg")
+            dl.box__term
+                dt Вызов миксина
+                dd
+                    img.box__screen(src="./assets/imgs/pug3.jpg")
+            dl.box__term
+                dt Создание и вызов миксина с параметрами несколько раз
+                dd
+                    img.box__screen(src="./assets/imgs/pug4.jpg")
+            dl.box__term
+                dt Создание и вызов миксина с параметрами несколько раз. Если параметров много можно передавать их как объект <sup>*</sup>
+                dd
+                    img.box__screen(src="./assets/imgs/pug5.jpg")
+            dl.box__term
+                dt Возможность разбивать страницу на части(компоненты) и подключать их с помощью include
+                dd
+                    img.box__screen(src="./assets/imgs/pug6.jpg")
+        .box
+            h2.box__h2 #3 Пример базового кода
+                p
+                    img.box__screen(src="./assets/imgs/pug.jpg")
+        .box
+            h2.box__h2 #4 Расширенные возможности(дополнить)
+            h3.box__h3 Наследование шаблонов (extends/ block)
+            p
+                a(href="https://pugjs.org/language/inheritance.html") https://pugjs.org/language/inheritance.html
+            h3.box__h3 Переменные (- var)
+            h3.box__h3 Условия (if)
+            h3.box__h3 Итерация (each)
+            p
+                span.alert
+                    a(href="https://pugjs.org/api/getting-started.html" target="_blank") Ссылка на документацию
