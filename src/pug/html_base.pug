@@ -9,26 +9,17 @@ block content
     .container
         .box
             h1.box__h1 HTML base
-            h2.box__h2 (В примерах отображается стилизация тегов по умолчанию!)
             h2.box__h2 #1 Базовые теги
             dl.box__term
                 dt Форматирование текста
-                dd(style="font-style: normal;")
-                    p Сайт рыбатекст <b>поможет</b> дизайнеру, <em>верстальщику</em>, вебмастеру сгенерировать несколько абзацев более
-                         | менее осмысленного текста рыбы на <abbr title="Cascading style Sheets">CSS</abbr> русском языке, а начинающему оратору отточить навык публичных
-                         | выступлений в <sup>домашних</sup> условиях. <i>При создании</i> генератора мы <strong>использовали</strong> небезизвестный
-                         | универсальный код речей. <small>Текст генерируется абзацами</small> случайным <sub>образом</sub> от двух до десяти
-                         | предложений в абзаце, что позволяет <ins>сделать</ins> текст более <del>привлекательным</del> и живым для
-                         | <mark>визуально-слухового</mark> восприятия.
-                    p Сайт <kbd>рыбатекст поможет</kbd> дизайнеру, верстальщику, <samp>вебмастеру сгенерировать</samp> несколько абзацев более
-                        | менее осмысленного <bdo dir="rtl">текста рыбы на русском языке</bdo>, а начинающему оратору отточить навык публичных
-                        | выступлений в домашних условиях.<q>При создании генератора мы использовали небезизвестный универсальный код речей.</q> При создании генератора мы использовали небезизвестный
-                        | универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти
-                        | предложений в абзаце, что позволяет сделать текст более привлекательным и живым для
-                        | визуально-слухового восприятия.
-                    br
-                    blockquote При создании генератора мы использовали небезизвестный универсальный код речей.
-                    hr
+                dd
+                    p.codepen(data-height='382' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='oNZBGJQ' style='height: 382px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Форматирование текста')
+                    span
+                        | See the Pen 
+                        a(href='https://codepen.io/helentr7/pen/oNZBGJQ') Форматирование текста
+                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
+
+                br
                 ul.box__list(style="list-style: none; margin:  0 0 20px;")
                     li &lt;p&gt; - разбивает текст на отдельные абзацы, отделяя друг от друга пустой строкой. Браузер автоматически добавляет верхний и нижний отступ, равный 1em, при этом отступы соседних абзацев «схлопываются».
                     li &lt;b&gt; - задаёт полужирное начертания шрифта.
@@ -52,86 +43,51 @@ block content
                     li &lt;dfn&gt; - позволяет выделить текст как определение. Несмотря на наличие специального тега, рекомендуется выделять текст силами CSS.
                     li &lt;br&gt; - переносит текст на следующую строку, создавая разрыв строки.
                     li &lt;hr&gt; - используется для разделения контента на веб-странице. Отображается в виде горизонтальной линии.
+            br
             dl.box__term
                 dt Заголовки
-                dd &lt;h1&gt; ; &lt;h2&gt; ; &lt;h3&gt; ; &lt;h4&gt; ; &lt;h5&gt; ; &lt;h6&gt;
                 dd
-                    h1 Заголовок h1
-                    h2 Заголовок h2
-                    h3 Заголовок h3
-                    h4 Заголовок h4
-                    h5 Заголовок h5
-                    h6 Заголовок h6
+                p.codepen(data-height='265' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='rNyjGdw' style='height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Заголовки')
+                span
+                    | See the Pen 
+                    a(href='https://codepen.io/helentr7/pen/rNyjGdw') Заголовки
+                script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
+            br
             dl.box__term
-                dt Маркированный список
-                dd &lt;ul&gt;
-                    span.tab &lt;li&gt;&lt;/li&gt;
-                    span.tab &lt;li&gt;&lt;/li&gt;
-                    span.tab &lt;li&gt;&lt;/li&gt;
-                    span.tab &lt;li&gt;&lt;/li&gt;
-                    | &lt;/ul&gt;
+                dt Маркированные/нумерованные списки
                 dd
-                    ul
-                        li пункт
-                        li пункт
-                        li пункт
-                        li пункт
-                        li пункт
-            dl.box__term
-                dt Нумерованный список
-                dd &lt;ol&gt;
-                    span.tab &lt;li&gt;&lt;/li&gt;
-                    span.tab &lt;li&gt;&lt;/li&gt;
-                    span.tab &lt;li&gt;&lt;/li&gt;
-                    | &lt;/ol&gt;
-                dd
-                    ol
-                        li пункт
-                        li пункт
-                        li пункт
-                        li пункт
-                        li пункт
+                    p.codepen(data-height='265' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='LYWxzvX' style='height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Списки')
+                    span
+                        | See the Pen 
+                        a(href='https://codepen.io/helentr7/pen/LYWxzvX') Маркированные/нумерованные списки
+                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
+            br    
             dl.box__term
                 dt Таблицы
-                dd &lt;table&gt;
-                    span.tab &lt;tr&gt;
-                    span.tab2 &lt;th&gt;&lt;/th&gt;
-                    span.tab2 &lt;th&gt;&lt;/th&gt;
-                    span.tab2 &lt;th&gt;&lt;/th&gt;
-                    span.tab &lt;/tr&gt;
-                    span.tab &lt;tr&gt;
-                    span.tab2 &lt;td&gt;&lt;/td&gt;
-                    span.tab2 &lt;td&gt;&lt;/td&gt;
-                    span.tab2 &lt;td&gt;&lt;/td&gt;
-                    span.tab &lt;/tr&gt;
-                    | &lt;/table&gt;
+                    a.alert( href="https://www.w3schools.com/html/html_tables.asp" target="_blank") -> Расширенная инфо по таблицам
                 dd
-                    table(style="width:100%")
-                        tr
-                          th Firstname
-                          th Lastname
-                          th Age
-                        tr
-                          td Jill
-                          td Smith
-                          td 50
-                        tr
-                          td Eve
-                          td Jackson
-                          td 94
-                p
-                    span.alert Расширенная инфо по таблицам -> <a href="https://www.w3schools.com/html/html_tables.asp" target="_blank">ссылка</a>
+                    p.codepen(data-height='265' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='PopWJMw' style='height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Таблицы')
+                    span
+                        | See the Pen 
+                        a(href='https://codepen.io/helentr7/pen/PopWJMw') Таблицы
+                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
+            br    
+            dl.box__term
+                dt Ссылки/кнопки
+                dd
+                    p.codepen(data-height='265' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='WNpRXQR' style='height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Ссылки/кнопки')
+                    span
+                        | See the Pen 
+                        a(href='https://codepen.io/helentr7/pen/WNpRXQR') Ссылки/кнопки
+                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
+            br    
             dl.box__term
                 dt Изображения
+                    a.alert( href="https://www.w3schools.com/tags/tag_img.asp" target="_blank") -> Расширенная инфо по изображениям  
                 dd
-                    img(src="error/path" alt="Альтернативный текст если картинка не найдена" title="Заголовок картинки")
-                dd
-                    img(src="https://www.howitworksdaily.com/wp-content/uploads/2015/06/Animals_Cats_Cat_in_the_night_031842_-1024x640.jpg"
-                        alt="image alt" title="Заголовок картинки" width="200" height="50")
-                dd
-                    img(src="https://www.howitworksdaily.com/wp-content/uploads/2015/06/Animals_Cats_Cat_in_the_night_031842_-1024x640.jpg"
-                    alt="image alt" title="Заголовок картинки" width="500")
-                dd
-                    img(src="./assets/imgs/cat.jpg" alt="Альтернативный текст если картинка не найдена" title="Заголовок картинки" width="500")
-                p
-                    span.alert Расширенная инфо по изображениям -> <a href="https://www.w3schools.com/tags/tag_img.asp" target="_blank">ссылка</a>
+                    p.codepen(data-height='265' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='GRWrONp' style='height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Изображения')
+                    span
+                        | See the Pen 
+                        a(href='https://codepen.io/helentr7/pen/GRWrONp') Изображения
+                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
+
