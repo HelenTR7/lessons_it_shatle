@@ -50,11 +50,11 @@
     "> 1%"
   ],
   "dependencies": {
-    "reset-css": "^4.0.1",
     "jquery": "^3.5.1",
     "jquery-form-styler": "^2.0.2",
+    "reset-css": "^4.0.1",
     "svg4everybody": "^2.1.9",
-    "swiper": "^6.4.5",
+    "swiper": "^6.6.1",
     "vanilla-lazyload": "^17.3.0"
   }
 }
