@@ -1,98 +1,73 @@
 extends layout/layout
 
 block vars
-    - var pageTitle = 'HTML base'
+    - var pageTitle = 'Базовый HTML'
     - var pageBodyClass = ''
     - var pageHeaderClass = ''
 
 block content
     .container
         .box
-            h1.box__h1 HTML base
-            h2.box__h2 #1 Базовые теги
+            h1.box__h1 Базовый HTML
+            h2.box__h2 #1 Введение в HTML
             dl.box__term
-                dt Форматирование текста
-                dd
-                    p.codepen(data-height='382' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='oNZBGJQ' style='height: 382px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Форматирование текста')
-                    span
-                        | See the Pen 
-                        a(href='https://codepen.io/helentr7/pen/oNZBGJQ') Форматирование текста
-                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
+                dt Тег (HTML элемент)
+                dd это основная структурная единица веб-страницы, написанная на языке HTML.
+        .box
+            h2.box__h2 #2 Базовая структура HTML
+            img.box__screen(src="./assets/imgs/base_html.jpg" alt="html")
+            dl.box__term
+                dt &lt;!DOCTYPE html&gt;
+                dd Элемент предназначен для указания типа текущего документа — DTD (document type definition, описание типа документа).  Это необходимо, чтобы браузер понимал, как следует интерпретировать текущую веб-страницу, поскольку HTML существует в нескольких версиях, кроме того, имеется XHTML (EXtensible HyperText Markup Language, расширенный язык разметки гипертекста), похожий на HTML, но различающийся с ним по синтаксису. Чтобы браузер «не путался» и понимал, согласно какому стандарту отображать веб-страницу и необходимо в первой строке кода задавать &lt;!DOCTYPE&gt;.<br> Есть несколько вариантов DOCTYPE. Самый актуальный - в примере. Он появился в HTML5 , и является актуальным до сих пор.
+            dl.box__term
+                dt &lt;html&gt;
+                dd Открывающий тег &lt;html&gt; определяет начало HTML-документа, внутри него хранится «голова» (&lt;head&gt;) и «тело» документа (&lt;body&gt;).
+            dl.box__term
+                dt &lt;head&gt;
+                dd Содержимое этого раздела не показывается напрямую на странице, за исключением элемента &lt;title&gt;. Внутри &lt;head&gt; могут располагаться следующие элементы: &lt;base&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;script&gt;, &lt;style&gt; или &lt;title&gt;.
+            dl.box__term
+                dt &lt;body&gt;
+                dd Внутри body находится структура документа, все теги, а также может быть подключен JS.
+            dl.box__term
+                dt &lt;title&gt;
+                dd Определяет заголовок документа.
+            dl.box__term
+                dt &lt;meta&gt;
+                dd является универсальным и добавляет целый класс возможностей, в частности, с помощью метатега, как обобщённо называют этот элемент, можно изменить кодировку страницы, добавить ключевые слова, описание документа и многое другое, предназначенное для браузера или поисковых систем. В частности, чтобы браузер понимал, что имеет дело с кодировкой UTF-8 (Unicode transformation format, формат преобразования Юникод) и добавляется данная строка.
+        .box
+            h2.box__h2 #3 Виды тегов
+            dl.box__term
+                dt парные
+                dd &lt;div&gt;&lt;/div&gt; ; &lt;span&gt;&lt;/span&gt; ; &lt;b&gt;&lt;/b&gt; ... etc
+            dl.box__term
+                dt непарные
+                dd &lt;!DOCTYPE html&gt; ; &lt;link&gt; ; &lt;img&gt; ; &lt;input&gt; ; &lt;br&gt; ; &lt;hr&gt; ... etc
+            .box__text
+                p Все теги делятся между собой по разным критериям. Самые основные - это парные и непарные теги. Название говорит само за себя. В случае  с парным тегом обязательно должен быть закрывающий тег, с таким же названием но дополнительным символом. Непарные же теги имеют закрывающий символ в конце
 
-                br
-                ul.box__list(style="list-style: none; margin:  0 0 20px;")
-                    li &lt;p&gt; - разбивает текст на отдельные абзацы, отделяя друг от друга пустой строкой. Браузер автоматически добавляет верхний и нижний отступ, равный 1em, при этом отступы соседних абзацев «схлопываются».
-                    li &lt;b&gt; - задаёт полужирное начертания шрифта.
-                    li &lt;strong&gt; - задаёт полужирное начертание шрифта, относится к тегам логической разметки, указывая браузеру на важность текста.
-                    li &lt;i&gt; - отображает шрифт курсивом.
-                    li &lt;em&gt; - отображает шрифт курсивом, придавая тексту значимость.
-                    li &lt;small&gt; - уменьшает размер шрифта на единицу по отношению к обычному тексту.
-                    li &lt;sub&gt; - используется для создания нижних индексов. Сдвигает текст ниже уровня строки, уменьшая его размер.
-                    li &lt;sup&gt; - используется для создания степеней. Сдвигает текст выше уровня строки, уменьшая его размер.
-                    li &lt;ins&gt; - выделяет текст в новой версии документа, подчёркивая его.
-                    li &lt;del&gt; - перечёркивает текст. Используется для выделения текста, удаленного из документа.
-                    li &lt;mark&gt; - применяется для выделения фрагментов текста в справочных целях, окрашивая блок символов желтым цветом.
-                    li &lt;code&gt; - служит для выделения фрагментов программного кода. Отображается моноширинным шрифтом.
-                    li &lt;kbd&gt; - отмечает фрагмент как вводимый пользователем с клавиатуры. Отображается моноширинным шрифтом.
-                    li &lt;samp&gt; - применяется для выделения результата, полученного в ходе выполнения программы. Отображается моноширинным шрифтом.
-                    li &lt;abbr&gt; - Применяется для форматирования аббревиатур. Браузером обычно подчеркивается пунктирной линией. Расшифровка сокращения осуществляется с помощью атрибута title, она появляется при наведении курсора мыши на текст.
-                    li &lt;bdo&gt; - используется для замещения текущего направления текста, т.е. текст в теге отображается зеркально.
-                    li &lt;blockquote&gt; - Выделяет цитаты внутри документа, выделяя его отступами и переносами строк. Для тега доступен атрибут cite.
-                    li &lt;q&gt; - используется для выделения коротких цитат. Браузерами заключается в кавычки. Для тега доступен атрибут cite.
-                    li &lt;cite&gt; - применяется для выделения цитат, названий произведений, сносок на другие документы.
-                    li &lt;dfn&gt; - позволяет выделить текст как определение. Несмотря на наличие специального тега, рекомендуется выделять текст силами CSS.
-                    li &lt;br&gt; - переносит текст на следующую строку, создавая разрыв строки.
-                    li &lt;hr&gt; - используется для разделения контента на веб-странице. Отображается в виде горизонтальной линии.
-            br
+        .box
+            h2.box__h2 #4 Виды html элементов
             dl.box__term
-                dt Заголовки
-                dd
-                p.codepen(data-height='265' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='rNyjGdw' style='height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Заголовки')
-                span
-                    | See the Pen 
-                    a(href='https://codepen.io/helentr7/pen/rNyjGdw') Заголовки
-                script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
-            br
+                dt Блочные
+                dd Блочные элементы являются основой, которая используется для верстки веб-страниц. Такой элемент представляет
+                    | собой прямоугольник, который по умолчанию занимает всю доступную ширину страницы (если иное значение не
+                    | указано в CSS), а длина элемента зависит от его содержимого. Такой элемент всегда начинается с новой строки,
+                    | то есть, располагается под предыдущим элементом. Блочный элемент может содержать в себе другие блочные и
+                    | строчные элементы.
+                dd &lt;div&gt; ; &lt;p&gt; ; &lt;ul&gt; ; &lt;ol&gt; ; &lt;h1&gt; ... etc
             dl.box__term
-                dt Маркированные/нумерованные списки
-                dd
-                    p.codepen(data-height='265' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='LYWxzvX' style='height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Списки')
-                    span
-                        | See the Pen 
-                        a(href='https://codepen.io/helentr7/pen/LYWxzvX') Маркированные/нумерованные списки
-                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
-            br    
-            dl.box__term
-                dt Таблицы
-                    a.alert( href="https://www.w3schools.com/html/html_tables.asp" target="_blank") -> Расширенная инфо по таблицам
-                dd
-                    p.codepen(data-height='265' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='PopWJMw' style='height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Таблицы')
-                    span
-                        | See the Pen 
-                        a(href='https://codepen.io/helentr7/pen/PopWJMw') Таблицы
-                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
-            br    
-            dl.box__term
-                dt Ссылки/кнопки
-                dd
-                    p.codepen(data-height='265' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='WNpRXQR' style='height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Ссылки/кнопки')
-                    span
-                        | See the Pen 
-                        a(href='https://codepen.io/helentr7/pen/WNpRXQR') Ссылки/кнопки
-                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
-            br    
-            dl.box__term
-                dt Изображения
-                    a.alert( href="https://www.w3schools.com/tags/tag_img.asp" target="_blank") -> Расширенная инфо по изображениям  
-                dd
-                    h3.box__h4 Аттрибуты:
-                    ul.box__list
-                        li src(обязательный) - путь к картинке
-                        li alt(обязательный) - альтернативный текст
-                        li title - текст при наведении на картинку
-                    p.codepen(data-height='265' data-theme-id='dark' data-default-tab='html,result' data-user='helentr7' data-slug-hash='GRWrONp' style='height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;' data-pen-title='Изображения')
-                    span
-                        | See the Pen 
-                        a(href='https://codepen.io/helentr7/pen/GRWrONp') Изображения
-                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
-
+                dt Строчные
+                dd В отличие от блочного, строчный элемент не переносится на новую строку, а располагается на той же строке,
+                    | что и предыдущий элемент. Такие элементы, как правило, находятся внутри блочных элементов и их ширина зависит
+                    | лишь от содержимого и настроек CSS. Еще одно отличие строчного элемента от блочного заключается к том,
+                    | что в нем может находиться только контент и другие строчные элементы. <span class="important">Блочные элементы
+                    | в строчные вкладывать нельзя</span>.
+                dd &lt;a&gt; ; &lt;span&gt; ; &lt;strong&gt; ; &lt;em&gt; ; &lt;img&gt; ... etc
+            div(style="border: 1px solid #fff; height: 50px;") div - блочный
+            div(style="border: 1px solid red; height: 50px;") div - блочный
+            div(style="border: 1px solid blue; height: 50px;") div - блочный
+            div(style="border: 1px solid green; height: 50px;") div - блочный
+            span(style="border: 1px solid #fff; height: 50px;") span - строчный
+            span(style="border: 1px solid red; height: 50px;") span - строчный
+            span(style="border: 1px solid blue; height: 50px;") span - строчный
+            span(style="border: 1px solid green; height: 50px;") span - строчный
