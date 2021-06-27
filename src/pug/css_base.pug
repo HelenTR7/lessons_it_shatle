@@ -10,14 +10,19 @@ block content
         .box
             h1.box__h1 Базовый CSS
             h2.box__h2 #1 Способы подключения
-            h3.box__h3 Инлайновый
+            h3.box__h3 Пример подключений
             dl.box__term
-                dt inline
+                dt inline / в теге style / в отдельном файле
                 dd
-        .box
-            h1.box__h2 #2 Блочная модель       
+                    p.codepen(data-height='300' data-theme-id='dark' data-default-tab='html,result' data-slug-hash='MWmgrbp' data-user='helentr7' style='height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;')
+                    span
+                        | See the Pen 
+                        a(href='https://codepen.io/helentr7/pen/MWmgrbp') Подключение CSS
+
+                    script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
+ 
         .box    
-            h2.box__h2 #0 Изменение типа элемента, свойство display
+            h2.box__h2 #2 Изменение типа элемента, свойство display
             h3.box__h3 Значения свойства
             dl.box__term
                 dt inline
@@ -33,7 +38,34 @@ block content
                     | строке друг за другом и переносясь на новую строку лишь при необходимости. Схлопывание margin в таких случаях
                     | перестает действовать.
         .box
-            h2.box__h2 #1 Единицы измерения
+            h2.box__h2 #3 Блочная модель 
+            dl.box__term
+                dt Width / height / padding / margin / border
+                dd
+                    p.codepen(data-height='300' data-theme-id='dark' data-default-tab='html,result' data-slug-hash='xxdKpLz' data-user='helentr7' style='height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;')
+                        span
+                            | See the Pen 
+                            a(href='https://codepen.io/helentr7/pen/xxdKpLz' target="_blank") Блочная модель
+                        script(async='' src='https://cpwebassets.codepen.io/assets/embed/ei.js')
+        .box
+            h2.box__h2 #4 Свойство box-sizing
+            h3.box__h3 Значения свойства
+            dl.box__term
+                dt content-box (значение по умолчанию в браузере)
+                dd Основывается на стандартах CSS, при этом свойства width и height
+                    | задают ширину и высоту контента и не включают в себя значения отступов,
+                    | полей и границ
+                dd
+                    .test-box__bs-cb content-box
+            dl.box__term
+                dt border-box (самое часто применяемое на практике)
+                dd Свойства width и height включают в себя значения полей и границ,
+                    | но не отступов (margin).
+                dd
+                    .test-box__bs-bb border-box
+
+        .box
+            h2.box__h2 #5 Единицы измерения
             dl.box__term
                 dt px(абсолютная)
                 dd размер определяется разрешением экрана.
@@ -53,55 +85,6 @@ block content
                 dt vh(относительная)
                 dd определяется от размера высоты окна браузера, 100vh = 100% высоты браузера.  При уменьшении высоты окна, уменьшается ширина, высота, шрифт элемента. Шрифт не будет масштабирован при нажатии Ctrl+ или Ctrl-.
         .box
-            h2.box__h2 #2 Работа с box-sizing
-            h3.box__h3 Значения свойства
-            dl.box__term
-                dt content-box (значение по умолчанию в браузере)
-                dd Основывается на стандартах CSS, при этом свойства width и height
-                    | задают ширину и высоту контента и не включают в себя значения отступов,
-                    | полей и границ
-                dd
-                    .test-box__bs-cb content-box
-            dl.box__term
-                dt border-box (самое часто применяемое на практике)
-                dd Свойства width и height включают в себя значения полей и границ,
-                    | но не отступов (margin).
-                dd
-                    .test-box__bs-bb border-box
-        .box
-            h2.box__h2 #3 Работа с width/height
-            dl.box__term
-                dt Пример работы с width/height px
-                dd
-                    .test-box__sizes 300px*50px
-            dl.box__term
-                dt Пример работы с width/height %
-                dd
-                    .test-box__sizes2 50%*50px
-            dl.box__term
-                dt Пример работы с width/height vw
-                dd
-                    .test-box__sizes3 50vw*50px
-
-        .box
-            h2.box__h2 #4 px rem em % vw vh для текста
-            div(style="color: #b1b1b1; font-size: 20px;")
-                p(style="font-size: 16px;") Текст 12px
-                p(style="font-size: 2rem;") Текст 2rem (считает от значения в html)
-                p(style="font-size: 2em;") Текст 2em
-                p(style="font-size: 300%;") Текст 300% (от родительского элемента)
-                p(style="font-size: 5vw;") Текст 5vw
-                p(style="font-size: 5vh;") Текст 5vh
-
-        .box
-            h2.box__h2 #5 Практическое применение em
-            h3.box__h3 Практическое применение em
-            div
-                a.btn-test(href="javascript:;") font-size: 16px (какое значение padding у этого элемента?)
-            div
-                a.btn-test.btn-test--md(href="javascript:;") font-size: 32px; (какое значение padding у этого элемента?)
-
-        .box
             h2.box__h2 #6 Работа с цветом
             dl.box__term
                 dt Пример задания цвета именем цвета
@@ -118,29 +101,7 @@ block content
                     .test-box__color-rgba2 background: rgba(0,0,0,0.5);
                     .test-box__color-rgba3 background: rgba(0,0,0,0.2);
         .box
-            h2.box__h2 #7 Задание margin/padding/border
-            dl.box__term
-                dt Пример margin(внешние оступы)
-                dd
-                    .test-box__margin см инструменты разработчика margin
-            dl.box__term
-                dt Пример padding(внутренние отступы)
-                dd
-                    .test-box__padding см инструменты разработчика padding
-            dl.box__term
-                dt Пример border(рамка)
-                dd
-                    .test-box__border 1px solid
-                    .test-box__border2 5px solid
-                    .test-box__border3 dashed
-                    .test-box__border4 dotted
-                    p
-                        span.alert дополнительно все свойства рамок #1 -> <a href="http://htmlbook.ru/css/border" target="_blank">ссылка</a>
-                    p
-                        span.alert дополнительно все свойства рамок #2 -> <a href="https://www.w3schools.com/css/css_border.asp" target="_blank">ссылка</a>
-
-        .box
-            h2.box__h2 #8 Margin особенности
+            h2.box__h2 #7 Margin особенности
             dl.box__term
                 dt Пример наложения границ соседей(см. инструменты разработчика -> styles)
                 dd
